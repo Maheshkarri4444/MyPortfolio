@@ -1,89 +1,3 @@
-// import { FaLocationArrow } from "react-icons/fa6";
-// import bgimg from "../assets/remaining/bg.png"
-// import { projects } from "../data/index";
-// import { PinContainer } from "./ui/Pin";
-// import { SectionHeading } from "./ui/typography";
-// import { SlideIn } from "./ui/transitions";
-
-// const RecentProjects = () => {
-//   return (
-//     <div className="py-10 bg-black/30">
-//       <SectionHeading className="md:pl-16">
-//         <SlideIn className="text-white/60">Selected</SlideIn>
-//         <br />
-//         <SlideIn>works</SlideIn>
-//       </SectionHeading>
-//       <div className="flex flex-wrap items-center justify-center gap-16 p-4 mt-10">
-//         {projects.map((item) => (
-//           <div
-//             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
-//             key={item.id}
-//           >
-//             <PinContainer
-//               title="Mahesh"
-//               href="https://twitter.com/mannupaaji"
-//             >
-//               <div className="relative flex items-center  justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-//                 <div
-//                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-//                   style={{ backgroundColor: "#13162D" }}
-//                 >
-//                   <img src={bgimg} alt="bgimg" />
-//                 </div>
-//                 <img
-//                   src={item.img}
-//                   alt="cover"
-//                   className="absolute bottom-0 z-10 h-40 rounded-lg w-80"
-//                 />
-//               </div>
-
-//               <h1 className="text-base font-bold lg:text-2xl md:text-xl line-clamp-1">
-//                 {item.title}
-//               </h1>
-
-//               <p
-//                 className="text-sm font-light lg:text-xl lg:font-normal line-clamp-2"
-//                 style={{
-//                   color: "#BEC1DD",
-//                   margin: "1vh 0",
-//                 }}
-//               >
-//                 {item.des}
-//               </p>
-
-//               <div className="flex items-center justify-between mb-3 mt-7">
-//                 <div className="flex items-center">
-//                   {item.iconLists.map((icon, index) => (
-//                     <div
-//                       key={index}
-//                       className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-//                       style={{
-//                         transform: `translateX(-${5 * index + 2}px)`,
-//                       }}
-//                     >
-//                       <img src={icon} alt="icon5" className="p-2" />
-//                     </div>
-//                   ))}
-//                 </div>
-
-//                 <div className="flex items-center justify-center">
-//                   <p className="flex text-sm lg:text-xl md:text-xs text-purple">
-//                     Check Live Site
-//                   </p>
-//                   <FaLocationArrow className="ms-3" color="#CBACF9" />
-//                 </div>
-//               </div>
-//             </PinContainer>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RecentProjects;
-
-
 import React from 'react';
 import { PinContainer } from './3d-Pin';
 import { SectionHeading } from './ui/typography';
@@ -115,7 +29,7 @@ export const projects = [
 
 export default function ProjectGrid() {
   return (
-    <div className="container min-w-full px-4 py-12 mx-auto bg-black/30">
+    <div id='projects' className="container min-w-full px-4 py-12 mx-auto bg-black/30">
         <SectionHeading className="md:pl-16">
          <SlideIn className="text-white/60">Featured</SlideIn>
          <br />

@@ -25,11 +25,11 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="min-h-screen px-4 py-12 text-white bg-gradient-to-br bg-black/30">
+    <div id='contact' className="min-h-screen px-4 py-12 text-white bg-gradient-to-br bg-black/30">
         <SectionHeading className="md:pl-16">
-            <SlideIn className="text-white/40">All my</SlideIn>
+            <SlideIn className="text-white/40">Contact</SlideIn>
             <br />
-            <SlideIn><span className='text-red-600'>P</span>rojects</SlideIn>
+            <SlideIn><span className='text-red-600'>M</span>e</SlideIn>
         </SectionHeading>
       <div className="grid grid-cols-1 gap-12 mx-auto md:pl-16 max-w-7xl lg:grid-cols-2">
         {/* Contact Form */}
@@ -89,7 +89,7 @@ export default function ContactMe() {
           <div className="space-y-8">
             <h2 className="text-2xl font-light">Get in touch</h2>
             <div className="space-y-2">
-              <p className="text-4xl font-semibold text-gray-200">maheshkarri2109<span className='text-red-600'>@</span>gmail.com</p>
+              <p className="text-4xl font-semibold text-gray-200"><span className='text-red-600'>m</span>aheshkarri2109<span className='text-red-600'>@</span>gmail.com</p>
               <p className="text-xl text-gray-400">+91-9212321321</p>
               <p className="text-xl text-gray-400">Los Angeles, America</p>
             </div>
