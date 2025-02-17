@@ -10,13 +10,10 @@ import ServicesSection from './components/Service';
 import Projects from './components/Projects';
 import RecentProjects from './components/RecentProjects';
 import ContactMe from './components/ContactMe';
-// // import ReactLenis from 'lenis';
-// import { ReactLenis } from '@studio-freight/react-lenis';
-
 
 function App() {
   return (
-      <Providers>
+    <Providers>
       <div className="relative min-h-screen">
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 hero-overlay" />
@@ -28,20 +25,30 @@ function App() {
         </div>
         <div className="relative z-10">
           <Header />
-          <main>
-            <Hero />
-            <About />
-            <SkillsSection/>
-            <ServicesSection/>  
-            <Experience/>
-            <RecentProjects/>
-            <Projects/>
-            <ContactMe/>
+          <main className="relative">
+            <section id="home" className="min-h-screen">
+              <Hero />
+            </section>
+            <section id="about" className="min-h-screen">
+              <About />
+              <SkillsSection/>
+            </section>
+            <section id="services" className="min-h-screen">
+              <ServicesSection/>  
+              <Experience/>
+            </section>
+            <section id="projects" className="min-h-screen">
+              <RecentProjects/>
+              <Projects/>
+            </section>
+            <section id="contact" className="min-h-screen">
+              <ContactMe/>
+            </section>
           </main>
           <BottomNav/>
         </div>
       </div>
-      </Providers>
+    </Providers>
   );
 }
 

@@ -15,7 +15,7 @@ const SkillsSection = () => {
     const sortedSkills = skills.sort((a, b) => a.sequence - b.sequence);
   
     return (
-      <section id="skills" className="skills-section bg-black/30">
+      <section  className="skills-section bg-black/30">
         <ParallaxText baseVelocity={-5}>
           {sortedSkills.map((skill) =>
             skill.enabled ? (

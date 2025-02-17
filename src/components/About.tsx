@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import profilepic from "../assets/remaining/Mahesh.jpg";
 import { SlideIn, Transition } from "./ui/transitions";
+import { TextReveal } from "./ui/typography";
 
 const about = {
   quote: "Dream drives excellence.",
@@ -17,7 +18,7 @@ const education = [
     _id: "1",
     jobTitle: "Full Stack Developer",
     summary: "Developed and maintained full-stack applications for various clients.",
-    bulletPoints: ["Built scalable APIs", "Improved frontend performance", "Looking forward to Collabrate"],
+    bulletPoints: ["Built scalable APIs", "Improved Backend performance", "Looking forward to Collabrate"],
     forEducation: true,
     enabled: true,
     sequence: 1,
@@ -26,7 +27,7 @@ const education = [
     _id: "2",
     jobTitle: "Currently Learning",
     summary: "Focusing more on the backend to handle larger and more complex systems efficiently.",
-    bulletPoints: ["Golang - Backend", "Web3 - Blockchain", "DSA - Problem Solving"],
+    bulletPoints: ["Golang - Backend", "Web3 - Blockchain/ETH/SOL", "DSA - Problem Solving"],
     forEducation: true,
     enabled: true,
     sequence: 2,
@@ -34,7 +35,7 @@ const education = [
   {
     _id: "3",
     jobTitle: "Future Ambitions",
-    summary: "Aspiring to become a versatile developer skilled in emerging fields.",
+    summary: "Aspiring to become a versatile developer skilled in Web3.",
     bulletPoints: [
       "Continuously learning and staying updated with cutting-edge technologies",
       "Exploring decentralized systems and Blockchain applications",
@@ -65,10 +66,10 @@ const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="grid md:grid-cols-[1fr_1.8fr] gap-x-10 py-20 px-4 md:px-8 relative bg-black/30 text-white" id="about">
+    <div  className="grid md:grid-cols-[1fr_1.8fr] gap-x-10 py-20 px-4 md:px-8 relative bg-black/30 text-white" >
 
       {/* Left Column */}
-      <div className="relative">
+      <div className="relative mb-2">
         <div className="sticky top-6">
           <Transition>
             <img
@@ -106,7 +107,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -131,7 +132,7 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ timeline, activeIndex, setA
     >
       <span className="font-mono text-red-500">0{index + 1}</span>
       <span className="flex-1 text-xl font-bold text-white md:text-3xl">
-        {timeline.jobTitle}
+        <TextReveal>{timeline.jobTitle}</TextReveal>
       </span>
       <motion.div
         className="relative flex items-center justify-center w-6 h-6"

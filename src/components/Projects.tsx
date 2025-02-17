@@ -204,7 +204,7 @@
 import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SectionHeading } from './ui/typography';
+import { SectionHeading, TextReveal } from './ui/typography';
 import { SlideIn, Transition } from './ui/transitions';
 
 type Project = {
@@ -388,11 +388,11 @@ export default function Projects() {
   };
 
   return (
-    <div  className="min-h-screen px-4 py-12 text-white bg-black/30">
+    <div  className="px-4 py-12 text-white  bg-black/30">
       <SectionHeading className="md:pl-16">
         <SlideIn className="text-white/40">All my</SlideIn>
         <br />
-        <SlideIn><span className='text-red-600'>P</span>rojects</SlideIn>
+        <SlideIn><span className='text-red-600'>W</span>orks</SlideIn>
       </SectionHeading>
 
       {/* Filter Options */}
@@ -412,7 +412,7 @@ export default function Projects() {
             whileHover={activeCategory === category ? "":"hover" }
             whileTap={{ scale: 0.95 }}
           >
-            {category}
+            <TextReveal>{category}</TextReveal>
           </motion.button>
         ))}
       </motion.div>

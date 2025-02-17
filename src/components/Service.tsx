@@ -22,7 +22,7 @@ const services = [
   
 
 const ServicesSection = () => (
-    <section className="relative w-full px-2 py-20 bg-black/30" id="services">
+    <section className="relative w-full px-2 py-20 bg-black/30">
       <span className="blob absolute top-[20%] right-0 w-1/3 h-5/6 blur-[100px] rotate-180 -z-10 " />
       <SectionHeading className="overflow-hidden md:pl-16">
         <SlideIn className="text-white/60">Here&apos;s how</SlideIn> <br />

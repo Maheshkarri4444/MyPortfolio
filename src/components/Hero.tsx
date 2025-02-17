@@ -9,7 +9,7 @@ const Hero = () => {
   const [hideLoader,setHideLoader] = useState(true);
 
   return (
-    <div className="relative overflow-hidden h-dvh w-dvw " id='home'>
+    <div className="relative overflow-hidden h-dvh w-dvw " >
       <span className="blob size-1/2 absolute top-20 left-0 blur-[100px]" />
     {hideLoader ? (
       <PageLoad hideLoader={hideLoader} setHideLoader={setHideLoader} />

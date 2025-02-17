@@ -97,7 +97,7 @@ export const HoverImageLink = ({
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
         src={imgSrc}
-        className="absolute z-0 object-cover h-20 rounded-lg w-28 md:h-36 md:w-52"
+        className="absolute z-20 object-cover h-20 rounded-lg w-28 md:h-36 md:w-52"
         alt={`Image representing a link for ${heading}`}
       /> 
     </motion.a>

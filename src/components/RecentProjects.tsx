@@ -27,9 +27,9 @@ export const projects = [
   },
 ];
 
-export default function ProjectGrid() {
+const ProjectGrid = () =>{
   return (
-    <div id='projects' className="container min-w-full px-4 py-12 mx-auto bg-black/30">
+    <section className="container min-w-full px-4 py-12 mx-auto bg-black/30">
         <SectionHeading className="md:pl-16">
          <SlideIn className="text-white/60">Featured</SlideIn>
          <br />
@@ -57,6 +57,8 @@ export default function ProjectGrid() {
         ))}
       </div>
       </Transition>
-    </div>
+    </section>
   );
 }
+
+export default ProjectGrid;
