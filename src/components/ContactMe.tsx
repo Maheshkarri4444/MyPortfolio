@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, X, Github } from 'lucide-react';
 import { SectionHeading , TextReveal} from './ui/typography';
 import { SlideIn } from './ui/transitions';
 
@@ -103,10 +103,7 @@ export default function ContactMe() {
                 <Linkedin size={24} />
               </a>
               <a href="#" className="text-red-600 transition-colors hover:text-white">
-                <Twitter size={24} />
-              </a>
-              <a href="#" className="text-red-600 transition-colors hover:text-white">
-                <Facebook size={24} />
+                <Github size={24} />
               </a>
             </div>
           </div>
@@ -115,7 +112,7 @@ export default function ContactMe() {
         </div>
       </div>
                 {/* Footer */}
-          <div className="flex items-center justify-between pt-12 mt-12 mb-16 text-sm text-gray-400 border-t sm:mb-0 border-white/10">
+          <div className="flex items-center justify-between pt-12 mt-12 mb-8 text-sm text-gray-400 border-t sm:mb-0 border-white/10">
             <p>© 2025 Mahesh's Portfolio</p>
             <p>developed by  <a>@Mahesh</a></p>
           </div>

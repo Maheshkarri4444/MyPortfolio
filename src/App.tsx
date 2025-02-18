@@ -10,11 +10,14 @@ import ServicesSection from './components/Service';
 import Projects from './components/Projects';
 import RecentProjects from './components/RecentProjects';
 import ContactMe from './components/ContactMe';
+import SparkleEffect from './components/SparkleEffect';
+import { MouseTrail } from './components/MouseTrail';
 
 function App() {
   return (
     <Providers>
       <div className="relative min-h-screen">
+      {/* <MouseTrail /> */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 hero-overlay" />
           <img 

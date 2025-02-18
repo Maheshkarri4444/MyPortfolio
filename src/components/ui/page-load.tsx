@@ -38,8 +38,8 @@ export const PageLoad = ({ setHideLoader }: PageLoadProps) => {
             I develop FullStack Applications.
           </p>
           <div className="flex items-end justify-between">
-            <span className="text-white/60">Loading...</span>
-            <motion.span className="font-semibold md:text-9xl text-7xl md:font-bold">
+            <span className="text-red-500/90">Loading...</span>
+            <motion.span className="font-semibold text-white/90 md:text-9xl text-7xl md:font-bold">
               {counter}%
             </motion.span>
           </div>

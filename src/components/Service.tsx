@@ -39,11 +39,11 @@ const ServicesSection = () => (
         subheading={service.desc}
       />
       <Transition className="hidden sm:block">
-        <button
+        <a href="#contact"
           className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white transition-colors duration-300 bg-transparent border rounded-full border-white/50 hover:bg-white/10 md:px-5 md:py-2 md:text-base"
         >
           <TextReveal>Discuss the project</TextReveal>
-        </button>
+        </a>
       </Transition>
     </Transition>
   ))}

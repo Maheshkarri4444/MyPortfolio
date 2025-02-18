@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import profilepic from "../assets/remaining/Mahesh.jpg";
+import profilepic from "../assets/remaining/MaheshPic2.jpg";
 import { SlideIn, Transition } from "./ui/transitions";
 import { TextReveal } from "./ui/typography";
 

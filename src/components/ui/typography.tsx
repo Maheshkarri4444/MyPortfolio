@@ -72,6 +72,67 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
   );
 };
 
+export const RedTextReveal = ({ children, className }: TextRevealProps) => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <motion.div
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      className={cn("relative overflow-hidden whitespace-pre", className)}
+    >
+      <div className="overflow-hidden">
+        {children.split("").map((char, i) => (
+          <motion.span
+            initial={{ y: 0 }}
+            animate={{ y: hover ? "-100%" : 0 }}
+            layout
+            transition={{ delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] }}
+            exit={{
+              y: 0,
+              transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
+            }}
+            key={i}
+            className={cn("inline-block whitespace-", {
+              "text-red-600 text-2xl": i === 0
+            })}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </div>
+      <motion.div className="absolute top-0 left-0">
+        {children.split("").map((char, i) => (
+          <motion.span
+            initial={{ y: "100%" }}
+            animate={{ y: hover ? 0 : "100%" }}
+            layout
+            transition={{ delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] }}
+            exit={{
+              y: 0,
+              transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
+            }}
+            key={i}
+            className={cn("inline-block whitespace-", {
+              "text-red-600 text-2xl": i === 0
+            })}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+};
+
+// export const SectionHeading = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+//   return (
+//     <h2 className={cn("text-4xl font-bold mb-8 md:text-5xl", className)}>
+//       {children}
+//     </h2>
+//   );
+// };
+
 export function PerspectiveText({
   children,
   hover,
