@@ -89,7 +89,7 @@ export default function ContactMe() {
           <div className="space-y-8">
             <h2 className="text-2xl font-light"><TextReveal>Get in touch</TextReveal></h2>
             <div className="space-y-2">
-              <p className="text-2xl font-semibold text-gray-200 sm:text-4xl"><span className='text-red-600'>m</span>aheshkarri2109<span className='text-red-600'>@</span>gmail.com</p>
+              <p className="text-2xl font-semibold text-gray-200 sm:text-3xl"><span className='text-red-600'>m</span>aheshkarri2109<span className='text-red-600'>@</span>gmail.com</p>
               <p className="text-xl text-gray-400">+91-8008791096</p>
               <p className="text-xl text-gray-400">Andhra Pradesh, India</p>
             </div>

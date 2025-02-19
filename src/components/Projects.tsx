@@ -236,7 +236,7 @@ export default function Projects() {
                   className="absolute inset-0 z-10 flex flex-col justify-between p-6 bg-black bg-opacity-80"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <div className="space-y-4">
                     <p className="text-lg">

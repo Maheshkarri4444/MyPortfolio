@@ -29,18 +29,18 @@ export const projects = [
 
 const ProjectGrid = () =>{
   return (
-    <section className="container min-w-full px-4 py-12 mx-auto bg-black/30">
+    <section className="container relative min-w-full px-4 py-12 mx-auto bg-black/30">
         <SectionHeading className="md:pl-16">
          <SlideIn className="text-white/60">Featured</SlideIn>
          <br />
         <SlideIn><span className='text-red-600'>P</span>rojects</SlideIn>
        </SectionHeading>
        <Transition>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="relative grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <div key={project.id} className="h-[400px] flex items-center justify-center">
             <PinContainer title={project.title} href={project.link}>
-              <div className="flex basis-full flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
+              <div className="relative flex basis-full flex-col p-4 tracking-tight text-slate-100/50 w-[20rem] h-[20rem]">
                 <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-slate-100">
                   {project.title}
                 </h3>

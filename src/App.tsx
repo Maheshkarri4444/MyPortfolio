@@ -12,6 +12,7 @@ import RecentProjects from './components/RecentProjects';
 import ContactMe from './components/ContactMe';
 import SparkleEffect from './components/SparkleEffect';
 import { MouseTrail } from './components/MouseTrail';
+import Testimonials from './components/Testonomials';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <section id="projects" className="min-h-screen">
               <RecentProjects/>
               <Projects/>
+              <Testimonials/>
             </section>
             <section id="contact" className="min-h-screen">
               <ContactMe/>

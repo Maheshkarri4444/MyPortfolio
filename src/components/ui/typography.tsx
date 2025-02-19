@@ -93,7 +93,7 @@ export const RedTextReveal = ({ children, className }: TextRevealProps) => {
               transition: { delay: i * 0.02, ease: [0.215, 0.61, 0.355, 1] },
             }}
             key={i}
-            className={cn("inline-block whitespace-", {
+            className={cn("inline-block  whitespace-", {
               "text-red-600 text-2xl": i === 0
             })}
           >
