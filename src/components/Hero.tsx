@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { PageLoad } from './ui/page-load';
 import { useState } from 'react';
-import ProfilePic from "../../../assets/remaining/profilepic.png";
+import ProfilePic from "../../../assets/profilepic.png";
 import { SlideIn,  Transition } from "./ui/transitions";
 import { TextReveal } from './ui/typography';
 
