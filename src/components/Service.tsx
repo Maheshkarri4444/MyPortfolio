@@ -2,20 +2,22 @@ import { SectionHeading, TextReveal } from "./ui/typography";
 import { SlideIn , Transition } from "./ui/transitions";
 import { HoverImageLink } from "./ui/hover-image-link";
 import ser1 from "../assets/remaining/proj1.jpg";
+import Backend from "../assets/pictures/Backend.jpg"
+import WebDevlopment from "../assets/pictures/Webdevlopment.jpg"
 
 const services = [
     {
       _id: 1,
       name: "Backend Development",
       charge: "$1000",
-      image: { url: ser1 },
+      image: { url: Backend },
       desc: "Building Sclable websites.",
     },
     {
       _id: 2,
       name: "Web Development",
       charge: "$1500",
-      image: { url: ser1 },
+      image: { url: WebDevlopment },
       desc: "Creating sleek and user-friendly Web applications.",
     }
   ];

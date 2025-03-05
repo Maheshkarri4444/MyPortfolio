@@ -3,6 +3,19 @@ import { ArrowUpRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionHeading, TextReveal } from './ui/typography';
 import { SlideIn, Transition } from './ui/transitions';
+import grdnaturals from "../assets/pictures/Projects/grdnaturals.png"
+import cardiolens from "../assets/pictures/Projects/cardiolens.gif"
+import examify from "../assets/pictures/Projects/Examify2.png"
+import chatify from "../assets/pictures/works/Chatify.png"
+import tictactoe from "../assets/pictures/works/TicTacToe.png"
+import brainwave from "../assets/pictures/works/Brainwave.png"
+import virtualLR from "../assets/pictures/works/VirtualLR.png"
+import netflixClone from "../assets/pictures/works/NetflixClone.png"
+import mrs from "../assets/pictures/works/MRS.png"
+import wca from "../assets/pictures/works/WCA.png"
+import bhp from "../assets/pictures/works/BHP.png"
+import dbp from "../assets/pictures/works/diabetespredictor.png"
+import portfolio from "../assets/pictures/works/Porfolio.png"
 
 type Project = {
   id: number;
@@ -16,99 +29,107 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Dashboard",
-    description: "Real-time analytics and sales tracking platform",
-    categories: ["Nextjs", "React", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "GRD-Naturals Bussiness Page",
+    description: "A complete Business & e-commerce website built for GRD Naturals Company",
+    categories: ["React", "Nodejs/Express", "TailwindCSS","Fullstack","MERN"],
+    image: grdnaturals,
+    url: "https://grdnaturals.com"
   },
   {
     id: 2,
-    title: "Classic Cars Showcase",
-    description: "Vintage automobile collection gallery",
-    categories: ["React", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Examify-Rgukt",
+    description: "Built Examify, an online exam platform ",
+    categories: ["React", "TailwindCSS" , "Golang","Fullstack","MERN"],
+    image: examify,
+    url: "https://github.com/Maheshkarri4444/Examify-Rgukt"
   },
   {
     id: 3,
-    title: "Fashion Store",
-    description: "Modern e-commerce fashion platform",
-    categories: ["TailwindCSS", "Nextjs"],
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Ai-Cardiolens",
+    description: "Developed the complete website for AICardiolens an AI-powered project that secured AIR 3rd in an IEEE hackathon",
+    categories: ["React","Nodejs/Express","TailwindCSS","Flask","MERN"],
+    image: cardiolens,
+    url: "https://github.com/Maheshkarri4444/Examify-Rgukt"
   },
   {
     id: 4,
-    title: "VR Experience",
-    description: "Immersive virtual reality showcase",
-    categories: ["Mern", "React", "Nodejs"],
-    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Chatify",
+    description: "Realtime ChatApp",
+    categories: [ "React", "Nodejs/Express","TailwindCSS","Fullstack","MERN"],
+    image: chatify,
+    url: "https://chat-app-ylbu.onrender.com/"
   },
   {
     id: 5,
-    title: "Tech Blog",
-    description: "Modern technology news platform",
-    categories: ["CSS", "React"],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Tic-Tac-Toe",
+    description: "Multiplayer Realtime TicTacToe Game",
+    categories: ["React","Nodejs/Express","TailwindCSS","Fullstack","MERN"],
+    image: tictactoe,
+    url: "https://tic-tac-toe-mern-azure.vercel.app"
   },
   {
     id: 6,
-    title: "AI Dashboard",
-    description: "Machine learning analytics interface",
-    categories: ["React", "Nodejs", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Netflix Clone",
+    description: "Netflix clone model for Practicing React",
+    categories: ["React"],
+    image: netflixClone,
+    url: "https://maheshkarri4444.github.io/Netflix-clone-Mahesh/"
   },
   {
     id: 7,
-    title: "E-Commerce Dashboard",
-    description: "Real-time analytics and sales tracking platform",
-    categories: ["Nextjs", "React", "Nodejs"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Brainwave Website",
+    description: "A website made using React",
+    categories: ["React", "TailwindCSS"],
+    image: brainwave,
+    url: "https://brainwave-react-practice-project-2.vercel.app"
   },
   {
     id: 8,
-    title: "Classic Cars Showcase",
-    description: "Vintage automobile collection gallery",
-    categories: ["React", "CSS"],
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "VirtualLR website",
+    description: "A website made using React",
+    categories: ["React", "TailwindCSS"],
+    image: virtualLR,
+    url: "https://react-practice-website-1-virtuallr.vercel.app"
   },
   {
     id: 9,
-    title: "Fashion Store",
-    description: "Modern e-commerce fashion platform",
-    categories: ["TailwindCSS", "React"],
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Banglore House Price Predicter",
+    description: "A Machine Learning basic project for practice",
+    categories: ["ML"],
+    image: bhp,
+    url: "https://github.com/Maheshkarri4444/Bangalore_House_Price_Predictor"
   },
   {
     id: 10,
-    title: "VR Experience",
-    description: "Immersive virtual reality showcase",
-    categories: ["Mern", "Nodejs"],
-    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Diabetes Predictor",
+    description: "A Machine Learning basic project for practice",
+    categories: ["ML"],
+    image: dbp,
+    url: "https://github.com/Maheshkarri4444/DIABETES-PREDICTOR"
   },
   {
     id: 11,
-    title: "Tech Blog",
-    description: "Modern technology news platform",
-    categories: ["CSS", "TailwindCSS"],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Whatsapp Chat Analysis",
+    description: "A Machine Learning basic project for practice",
+    categories: ["ML"],
+    image: wca,
+    url: "https://github.com/Maheshkarri4444/WhatsappChatAnalysis"
   },
   {
     id: 12,
-    title: "AI Dashboard",
-    description: "Machine learning analytics interface",
-    categories: ["React", "Nextjs"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&q=80&w=2000",
-    url: "#"
+    title: "Movie Recommendation System",
+    description: "A Machine Learning basic project for practice",
+    categories: ["ML"],
+    image: mrs,
+    url: "https://github.com/Maheshkarri4444/Movie-Recommendation-System"
+  },
+  {
+    id: 13,
+    title: "My Portfolio",
+    description: "A dynamic and interactive portfolio website built to show case my skills and my projects",
+    categories: ["React","Fullstack","MERN"],
+    image: portfolio,
+    url: "https://github.com/Maheshkarri4444/MyPortfolio"
   }
 ];
 
@@ -216,6 +237,7 @@ export default function Projects() {
 
       <Transition>
         <AnimatePresence mode="wait">
+          <div className='flex justify-center'>
           <motion.div
             key={activeCategory}
             className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
@@ -227,13 +249,13 @@ export default function Projects() {
             {filteredProjects.slice(0, visibleProjects).map((project) => (
               <motion.div
                 key={project.id}
-                className="relative overflow-hidden group rounded-xl"
+                className="relative flex items-center justify-center w-full overflow-hidden group rounded-xl"
                 variants={projectVariants}
                 layout
               >
                 {/* Hover Description */}
                 <motion.div
-                  className="absolute inset-0 z-10 flex flex-col justify-between p-6 bg-black bg-opacity-80"
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-between p-6 bg-black bg-opacity-80"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -253,6 +275,7 @@ export default function Projects() {
                   </div>
                   <motion.a
                     href={project.url}
+                    target='_blank'
                     className="flex items-center self-end gap-2 text-red-500"
                     whileHover={{ color: "#ffffff", x: 5 }}
                     transition={{ duration: 0.2 }}
@@ -265,7 +288,7 @@ export default function Projects() {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[300px] object-cover"
+                  className="h-[250px] w-full object-cover"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -277,6 +300,7 @@ export default function Projects() {
               </motion.div>
             ))}
           </motion.div>
+          </div>
         </AnimatePresence>
       </Transition>
 

@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,9 +14,11 @@ import ContactMe from './components/ContactMe';
 import SparkleEffect from './components/SparkleEffect';
 import { MouseTrail } from './components/MouseTrail';
 import Testimonials from './components/Testonomials';
+import Preloader from './components/Preloader';
 
 function App() {
   return (
+    <Suspense fallback={<Preloader />}>
     <Providers>
       <div className="relative min-h-screen">
       {/* <MouseTrail /> */}
@@ -54,6 +57,7 @@ function App() {
         </div>
       </div>
     </Providers>
+    </Suspense>
   );
 }
 

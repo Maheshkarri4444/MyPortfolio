@@ -2,28 +2,31 @@ import React from 'react';
 import { PinContainer } from './3d-Pin';
 import { SectionHeading } from './ui/typography';
 import { SlideIn  , Transition} from './ui/transitions';
+import grdnaturals from "../assets/pictures/Projects/grdnaturals.png"
+import cardiolens from "../assets/pictures/Projects/cardiolens.gif"
+import examify from "../assets/pictures/Projects/Examify2.png"
 
 export const projects = [
   {
     id: 1,
-    title: "Chatify",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=2940&auto=format&fit=crop",
-    link: "https://ui.earth.com",
+    title: "GRD-Naturals Bussiness Page",
+    des: "A complete Business & e-commerce website built for GRD Naturals, showcasing and selling their natural products online.",
+    img: grdnaturals,
+    link: "https://grdnaturals.com",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=2942&auto=format&fit=crop",
-    link: "https://ui.yoom.com",
+    title: "AiCardiolens-Collabration",
+    des: "Developed the complete website for AICardiolens an AI-powered project that secured AIR 3rd in an IEEE hackathon",
+    img: cardiolens,
+    link: "https://github.com/Maheshkarri4444/AI-EchocardiagramProject-Collabration",
   },
   {
     id: 3,
-    title: "Portfolio Pro",
-    des: "Showcase your work with style using our modern portfolio platform built for creative professionals.",
-    img: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2938&auto=format&fit=crop",
-    link: "https://ui.portfolio.com",
+    title: "Examify",
+    des: "Built Examify, an online exam platform with tab-switch detection for secure assessments.",
+    img: examify,
+    link: "https://github.com/Maheshkarri4444/Examify-Rgukt",
   },
 ];
 

@@ -10,6 +10,9 @@ export const PageLoad = ({ setHideLoader }: PageLoadProps) => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
+    // Disable scrolling when loader is visible
+    document.body.style.overflow = "hidden";
+
     const count = setInterval(() => {
       if (counter < 100) {
         setCounter(counter + 2);
@@ -23,12 +26,18 @@ export const PageLoad = ({ setHideLoader }: PageLoadProps) => {
     };
   }, [counter]);
 
+  // Enable scrolling again when animation completes
+  const handleAnimationComplete = () => {
+    document.body.style.overflow = "auto"; // Restore scrolling
+    setHideLoader(false);
+  };
+
   return (
     <motion.div
       initial={{ y: 0 }}
       animate={{ y: "-100%" }}
       transition={{ delay: 2.5, duration: 1, type: "tween" }}
-      onAnimationComplete={() => setHideLoader(false)}
+      onAnimationComplete={handleAnimationComplete} // Call when animation finishes
       className="fixed top-0 left-0 z-[9999] w-full h-full bg-black"
     >
       <div className="flex flex-col w-full h-full p-4 md:p-10 md:justify-between max-md:gap-8">
