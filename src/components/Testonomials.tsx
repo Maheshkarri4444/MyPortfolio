@@ -18,9 +18,9 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    content: "Mahesh Karri has done an excellent job in developing our e-commerce and business website. His expertise and dedication have given us a seamless, user-friendly platform that perfectly meets our needs. We truly appreciate his work and highly recommend him!",
-    author: "Nikileshwar Rao sulake",
-    position: "GRD Naturals"
+    content: "Mahesh is an outstanding web developer with excellent coding and ideation skills, always integrating the latest technologies. His ability to write efficient, well-documented code at incredible speed is truly remarkable. I’ve never seen such fast development with high quality and future-ready solutions!",
+    author: "Nikileshwara Rao sulake",
+    position: "Ai Rearcher"
   },
 ];
 
