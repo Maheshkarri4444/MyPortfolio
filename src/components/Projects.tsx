@@ -133,7 +133,6 @@ const projects: Project[] = [
   }
 ];
 
-// Get unique categories from all projects
 const allCategories = ["All", ...new Set(projects.flatMap(project => project.categories))].sort();
 
 const containerVariants = {
@@ -195,6 +194,17 @@ const filterVariants = {
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [visibleProjects, setVisibleProjects] = useState(4);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const filteredProjects = projects.filter(project => 
     activeCategory === "All" ? true : project.categories.includes(activeCategory)
@@ -202,7 +212,20 @@ export default function Projects() {
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
-    setVisibleProjects(4); // Reset visible projects when changing category
+    setVisibleProjects(4);
+    setActiveProject(null);
+  };
+
+  const handleProjectClick = (projectId: number) => {
+    if (isMobile) {
+      setActiveProject(activeProject === projectId ? null : projectId);
+    }
+  };
+
+  const handleProjectHover = (projectId: number | null) => {
+    if (!isMobile) {
+      setActiveProject(projectId);
+    }
   };
 
   return (
@@ -213,7 +236,6 @@ export default function Projects() {
         <SlideIn><span className='text-red-600'>W</span>orks</SlideIn>
       </SectionHeading>
 
-      {/* Filter Options */}
       <motion.div 
         className="flex flex-wrap justify-center gap-4 mb-12"
         variants={containerVariants}
@@ -238,73 +260,73 @@ export default function Projects() {
       <Transition>
         <AnimatePresence mode="wait">
           <div className='flex justify-center'>
-          <motion.div
-            key={activeCategory}
-            className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-            variants={containerVariants}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-          >
-            {filteredProjects.slice(0, visibleProjects).map((project) => (
-              <motion.div
-                key={project.id}
-                className="relative flex items-center justify-center w-full overflow-hidden group rounded-xl"
-                variants={projectVariants}
-                layout
-              >
-                {/* Hover Description */}
+            <motion.div
+              key={activeCategory}
+              className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+            >
+              {filteredProjects.slice(0, visibleProjects).map((project) => (
                 <motion.div
-                  className="absolute inset-0 z-10 flex flex-col items-center justify-between p-6 bg-black bg-opacity-80"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
+                  key={project.id}
+                  className="relative flex items-center justify-center w-full overflow-hidden group rounded-xl"
+                  variants={projectVariants}
+                  layout
+                  onClick={() => handleProjectClick(project.id)}
+                  onMouseEnter={() => handleProjectHover(project.id)}
+                  onMouseLeave={() => handleProjectHover(null)}
                 >
-                  <div className="space-y-4">
-                    <p className="text-lg">
-                      <span className="">{project.description[0]}</span>
-                      {project.description.slice(1)}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.categories.map((cat) => (
-                        <span key={cat} className="px-3 py-1 text-sm rounded-full bg-red-500/30">
-                          {cat}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <motion.a
-                    href={project.url}
-                    target='_blank'
-                    className="flex items-center self-end gap-2 text-red-500"
-                    whileHover={{ color: "#ffffff", x: 5 }}
-                    transition={{ duration: 0.2 }}
+                  <motion.div
+                    className="absolute inset-0 z-10 flex flex-col items-center justify-between p-6 bg-black bg-opacity-80"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: activeProject === project.id ? 1 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    Visit <ArrowUpRight className="w-4 h-4" />
-                  </motion.a>
+                    <div className="space-y-4">
+                      <p className="text-lg">
+                        <span className="">{project.description[0]}</span>
+                        {project.description.slice(1)}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.categories.map((cat) => (
+                          <span key={cat} className="px-3 py-1 text-sm rounded-full bg-red-500/30">
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <motion.a
+                      href={project.url}
+                      target='_blank'
+                      className="flex items-center self-end gap-2 text-red-500"
+                      whileHover={{ color: "#ffffff", x: 5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      Visit <ArrowUpRight className="w-4 h-4" />
+                    </motion.a>
+                  </motion.div>
+
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-[250px] w-full object-cover"
+                    whileHover={{ scale: isMobile ? 1 : 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
+                  <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
+                    <h3 className="text-xl font-semibold">{project.title}</h3>
+                  </div>
                 </motion.div>
-
-                {/* Project Image */}
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-[250px] w-full object-cover"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* Project Title */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
           </div>
         </AnimatePresence>
       </Transition>
 
-      {/* Show More Button */}
       {filteredProjects.length > visibleProjects && (
         <motion.div 
           className="mt-12 text-center"
@@ -321,7 +343,7 @@ export default function Projects() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-           <TextReveal>Show more</TextReveal>
+            <TextReveal>Show more</TextReveal>
           </motion.button>
         </motion.div>
       )}
